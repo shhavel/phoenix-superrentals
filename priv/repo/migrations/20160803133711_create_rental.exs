@@ -6,7 +6,7 @@ defmodule Superrentals.Repo.Migrations.CreateRental do
       add :title, :string
       add :owner, :string
       add :city, :string
-      add :type, :string
+      add :category, :string
       add :image, :string
       add :bedrooms, :integer
 

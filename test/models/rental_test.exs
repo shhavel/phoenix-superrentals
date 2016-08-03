@@ -3,7 +3,7 @@ defmodule Superrentals.RentalTest do
 
   alias Superrentals.Rental
 
-  @valid_attrs %{bedrooms: 42, city: "some content", image: "some content", owner: "some content", title: "some content", type: "some content"}
+  @valid_attrs %{bedrooms: 42, city: "some content", image: "some content", owner: "some content", title: "some content", category: "some content"}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do

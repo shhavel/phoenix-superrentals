@@ -5,10 +5,10 @@ defmodule Superrentals.RentalController do
 
   def index(conn, _params) do
     rentals = Repo.all(Rental)
-    render(conn, "index.json", rentals: rentals)
+    render(conn, "index.json-api", data: rentals)
   end
 
-  def create(conn, %{"rental" => rental_params}) do
+  def create(conn, %{"data" => %{"attributes" => rental_params}}) do
     changeset = Rental.changeset(%Rental{}, rental_params)
 
     case Repo.insert(changeset) do
@@ -16,7 +16,7 @@ defmodule Superrentals.RentalController do
         conn
         |> put_status(:created)
         |> put_resp_header("location", rental_path(conn, :show, rental))
-        |> render("show.json", rental: rental)
+        |> render("show.json-api", data: rental)
       {:error, changeset} ->
         conn
         |> put_status(:unprocessable_entity)
@@ -26,16 +26,16 @@ defmodule Superrentals.RentalController do
 
   def show(conn, %{"id" => id}) do
     rental = Repo.get!(Rental, id)
-    render(conn, "show.json", rental: rental)
+    render(conn, "show.json-api", data: rental)
   end
 
-  def update(conn, %{"id" => id, "rental" => rental_params}) do
+  def update(conn, %{"id" => id, "data" => %{"attributes" => rental_params}}) do
     rental = Repo.get!(Rental, id)
     changeset = Rental.changeset(rental, rental_params)
 
     case Repo.update(changeset) do
       {:ok, rental} ->
-        render(conn, "show.json", rental: rental)
+        render(conn, "show.json-api", data: rental)
       {:error, changeset} ->
         conn
         |> put_status(:unprocessable_entity)

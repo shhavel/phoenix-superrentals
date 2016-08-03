@@ -38,6 +38,6 @@ defmodule Superrentals.Endpoint do
     key: "_superrentals_key",
     signing_salt: "TOAT3eJw"
 
-  plug Corsica #, origins: "http://localhost:4200"
+  plug Corsica
   plug Superrentals.Router
 end

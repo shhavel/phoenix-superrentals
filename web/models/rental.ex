@@ -5,7 +5,7 @@ defmodule Superrentals.Rental do
     field :title, :string
     field :owner, :string
     field :city, :string
-    field :type, :string
+    field :category, :string
     field :image, :string
     field :bedrooms, :integer
 
@@ -17,7 +17,7 @@ defmodule Superrentals.Rental do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:title, :owner, :city, :type, :image, :bedrooms])
-    |> validate_required([:title, :owner, :city, :type, :image, :bedrooms])
+    |> cast(params, [:title, :owner, :city, :category, :image, :bedrooms])
+    |> validate_required([:title, :owner, :city, :category, :image, :bedrooms])
   end
 end

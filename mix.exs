@@ -38,6 +38,7 @@ defmodule Superrentals.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
      {:corsica, "~> 0.4"},
+     {:ja_serializer, ">= 0.10.1"},
      {:cowboy, "~> 1.0"}]
   end
 
