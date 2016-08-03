@@ -29,6 +29,8 @@ defmodule Superrentals.ConnCase do
 
       # The default endpoint for testing
       @endpoint Superrentals.Endpoint
+
+      import Bureaucrat.Helpers
     end
   end
 

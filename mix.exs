@@ -39,7 +39,8 @@ defmodule Superrentals.Mixfile do
      {:gettext, "~> 0.11"},
      {:corsica, "~> 0.4"},
      {:ja_serializer, ">= 0.10.1"},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:bureaucrat, "~> 0.1.4"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
